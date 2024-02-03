@@ -7,14 +7,14 @@ import PricingBox from "./PricingBox";
 const Pricing = () => {
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+  // useEffect(() => {
+  //   fetchProducts();
+  // }, []);
 
-  const fetchProducts = async () => {
-    const { data } = await axios.get("/api/getproducts");
-    setProducts(data);
-  };
+  // const fetchProducts = async () => {
+  // const { data } = await axios.get("/api/getproducts");
+  // setProducts(data);
+  // };
 
   return (
     <section
