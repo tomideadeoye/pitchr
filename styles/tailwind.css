@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Monument Extended";
+    src: url("/fonts/MonumentExtended/MonumentExtended-Regular.otf") format("opentype");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Monument Extended";
+    src: url("/fonts/MonumentExtended/MonumentExtended-Bold.otf") format("opentype");
+    font-weight: bold;
+    font-display: swap;
+  }
+
+  h1 {
+    @apply scroll-m-20 font-monument text-4xl font-extrabold dark:text-white md:text-6xl;
+  }
+  h2 {
+    @apply scroll-m-20 font-monument text-3xl font-extrabold  md:text-[30px];
+  }
+  h3 {
+    @apply scroll-m-20 font-monument text-xl font-extrabold;
+  }
+}
