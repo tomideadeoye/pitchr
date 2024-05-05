@@ -20,28 +20,11 @@ export default function Footer() {
 
   const footerItems = [
     {
-      title: "Services",
-      items: [
-        {
-          name: "Solar Farms",
-          href: "#",
-        },
-        {
-          name: "Organisations",
-          href: "#",
-        },
-        {
-          name: "Apartments",
-          href: "#",
-        },
-      ],
-    },
-    {
       title: companyData.companyName,
       items: [
         {
           name: "About Us",
-          href: "#",
+          href: "/about",
         },
         {
           name: "Careers",

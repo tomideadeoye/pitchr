@@ -55,9 +55,7 @@ export default function GetQTFQuote() {
   return (
     <div className="mx-auto mb-[80px] mt-[80px] flex max-w-[800px] items-center gap-14 overflow-hidden bg-white p-10 dark:bg-gray-900">
       <div className="flex w-full flex-col gap-8">
-        <h2
-          className="text-center"
-        >Please fill in your information here</h2>
+        <h2 className="text-center">Please fill in your information here</h2>
         <p>
           You can reach us anytime via{" "}
           <a href={"mailto:" + companyData.contact.emails[0]} className="font-bold text-primary">
@@ -102,10 +100,7 @@ export default function GetQTFQuote() {
 
           <p className="text-sm font-thin">
             By clicking below, I authorize {companyData.companyName} to call me and send pre-recorded messages and text
-            messages to me about {companyData.companyName} products and services at the telephone number I entered
-            above, using an autodialer, even if I am on a national or state “Do Not Call” list. Message and data rates
-            may apply. Maximum 10 texts per month. Consent for calls & texts is optional. You can opt out anytime. You
-            also agree to our Terms of Service.
+            messages.
           </p>
           <Button type="submit" className="w-full rounded-xl py-6 text-white">
             Reach out to us

@@ -100,7 +100,6 @@ export const companyData = {
         "Raising $300k+ for Pre-Seed round, $1m+ for Seed Round, $3m+ Series A.",
       ],
     },
-    ActionButtons: ["Reach out to us", "Recommend a startup"],
   },
   AdditionalInformation: {
     ValueAddDetails: [
