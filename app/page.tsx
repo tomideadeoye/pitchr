@@ -21,7 +21,7 @@ export const companyData = {
   Stat: "Most founders get to close less than 5x of the investors they pitch to - we can help you 10x that outcome.",
   Description:
     "Our aim is to improve fundraising outcomes for founders and get you to give your best pitch to the next investors you engage with.",
-  Mission: "To prepare and set up founders for a successful fundraiser.",
+  Mission: "to prepare and set up founders for a successful fundraiser.",
   Vision: [
     "To be the leading ecosystem where founders and startups can find the highest quality support materials, guidance, and resources for founders and their startups.",
     "To democratize access and knowledge to investor preparedness.",
@@ -216,12 +216,7 @@ export default function Web() {
         </ol>
       </nav>
 
-      <div className="flex flex-col gap-2">
-        <p>Our Customers</p>
-        <h3 className="max-w-md text-xl font-extrabold dark:text-white">
-          Solar farms, Apartments, organisations & homes
-        </h3>
-      </div>
+  
 
       <GetQuoteBanner
         props={{
