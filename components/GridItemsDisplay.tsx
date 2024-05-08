@@ -1,4 +1,3 @@
-import { Separator } from "@/components/ui/separator"
 import { companyData } from "app/page"
 
 interface GridItemProps {
@@ -8,15 +7,22 @@ interface GridItemProps {
 }
 export const GridItemsDisplay = () => {
   return (
-    <div className="-m-4 flex w-full justify-between self-center">
-      {companyData.Vision.map((item, index) => (
-        <div className="flex  p-3 " key={item}>
-          <div className="flex flex-col gap-3 rounded-md p-4">
-            <h3 className="text-md mb-2 font-bold">{item}</h3>
-          </div>
-          <Separator className="w-5" />
-        </div>
-      ))}
+    <div>
+      <div className="p-4 text-gray-600">
+        <h1 className="mb-8 text-center text-3xl font-bold text-primary">This is - what we do :</h1>
+
+        <ul className="grid place-content-center gap-8 sm:grid-cols-2">
+          {companyData.Vision.map((item, index) => (
+            <li className="flex">
+              <div className="px-4 text-5xl font-extralight text-primary">0{index + 1}.</div>
+              <div>
+                <div className="text-xl font-bold ">Research</div>
+                <p className="max-w-xs py-2 text-sm ">{item}.</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }

@@ -1,7 +1,5 @@
 import { Metadata } from "next"
-import { GridItemsDisplay } from "components/GridItemsDisplay"
 import GetQuoteButton from "components/GetQuoteButton"
-import { JoinUsBanner } from "components/JoinUsBanner"
 import { companyData } from "app/page"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 
@@ -23,28 +21,6 @@ export const metadata: Metadata = {
 }
 
 export default function Web() {
-  const whyQTF: { icon: string; title: string; description: string }[] = [
-    {
-      icon: "stars.svg",
-      title: "Expertise in Large-Scale Solar Solutions",
-      description: `With years of experience in the solar energy sector, {companyData.companyName} is at the forefront of delivering tailored large-scale solar services.`,
-    },
-    {
-      icon: "environment.svg",
-      title: "Environmental Stewardship",
-      description: `By choosing our services, you are not only investing in clean energy but actively participating in the global movement towards a greener and more sustainable future.`,
-    },
-    {
-      icon: "industry.svg",
-      title: "Customized Solutions for Organizations",
-      description: `{companyData.companyName} takes a consultative approach, working closely with clients to design and implement solar solutions that align with their specific goals, energy consumption patterns, and budget considerations. `,
-    },
-    {
-      icon: "apartment.svg",
-      title: "Efficient Apartment Solar Solutions",
-      description: `{companyData.companyName} provides comprehensive solar solutions tailored for apartment communities, enhancing energy efficiency, reducing costs, and creating a positive environmental impact.`,
-    },
-  ]
   return (
     <section className="mx-auto mb-10 flex max-w-screen-xl flex-col gap-14 bg-white p-10  dark:bg-gray-900">
       <div className="p-4">
@@ -70,7 +46,7 @@ export default function Web() {
                       {person.Bio}
                     </p> */}
                   </div>
-                  <div className="w-30 mx-auto flex flex items-center justify-between gap-4 border-t border-gray-200 pt-8 text-gray-500">
+                  <div className="w-30 mx-auto flex  items-center justify-between gap-4 border-t border-gray-200 pt-8 text-gray-500">
                     <a href="#">
                       <svg
                         width="30"

@@ -16,7 +16,7 @@ export const companyData = {
     addresses: ["Co-Working Space X"],
     socialMedia: [],
   },
-  taglines: ["Fundraise with Ease", `Deliver your best Pitch to Investors with PitchR, Fundraise with Ease`],
+  taglines: ["Fundraise with Ease", `Deliver your best Pitch to Investors with PitchR`],
 
   Stat: "Most founders get to close less than 5x of the investors they pitch to - we can help you 10x that outcome.",
   Description:
@@ -51,19 +51,19 @@ export const companyData = {
   team: [
     {
       name: "Timilehin Idowu",
-      Bio: "djv.kaljfbfjdl;kajsgblwekr;fasbfne",
+
       linkedin: "https://www.linkedin.com/in/timileyin-idowu-507523146/",
       twitter: "",
     },
     {
       name: "Olumide Ashade",
-      Bio: "full/partial Bio",
+
       linkedin: "https://www.linkedin.com/in/olumide-ashade-7b4089162/",
       twitter: "https://twitter.com/OlumideAshade",
     },
     {
       name: "Carl Macaulay",
-      Bio: "full/partial Bio",
+
       linkedin: "https://www.linkedin.com/in/timileyin-idowu-507523146/",
       twitter: "",
     },
@@ -100,61 +100,6 @@ export const companyData = {
         "Raising $300k+ for Pre-Seed round, $1m+ for Seed Round, $3m+ Series A.",
       ],
     },
-  },
-  AdditionalInformation: {
-    ValueAddDetails: [
-      "Pitch Feedback/Pitch Review",
-      "Knowledge of What to do: Dataroom, how to share resources, how to send cold emails and connect with VCs",
-      "Create a knowledge-valuable database for startups e.g., sample data room, financial model, market sizing, how to send cold emails.",
-      "Successful founders will be connected to our co-investing networks and visibility on our platform.",
-    ],
-    TeamSetup: {
-      VCTeam: "Diverse people from different African markets and external markets",
-      IndustryBasedExperience: [
-        "Consultants",
-        "CFO",
-        "Operators",
-        "Human Resources",
-        "Venture Legals",
-        "Media",
-        "Marketing",
-      ],
-    },
-    QualityControl: {
-      Hours: "Stipulate number of hours",
-      Skills: "Outline Individual skill sets",
-      Documentation: [
-        "Create a system such as documentation",
-        "Process of interacting with founders and closing the loop",
-        "Create a level of standardisation",
-        "System for enlisting third parties",
-        "Systems for external communications",
-      ],
-    },
-    RecommendedNames: [
-      "VentureZen Network",
-      "GrowthBridge Collective",
-      "GrowthPulse Africa",
-      "Emerge Circle",
-      "TechFusion Hub",
-      "Pitchr",
-      "Duzi",
-      "Tilt",
-    ],
-    KnowledgeDatabase: [
-      "Pitchdeck 101",
-      "Pitching 101",
-      "Investor Database & Emails",
-      "Hiring your first set of employees",
-      "Navigating Co-founder conflicts",
-    ],
-    BarrelAsks: [
-      "Investor Deck",
-      "Hiring engineer, PM",
-      "Intro to customers",
-      "Setting Valuation",
-      "Thinking through the business model",
-    ],
   },
 }
 
@@ -250,36 +195,27 @@ export default function Web() {
         })}
       </div>
 
-      <div>
-        <div className="flex items-center justify-center bg-muted">
-          <div className="flex max-w-screen-2xl flex-col items-start justify-start gap-6 px-4 py-8 lg:py-16 ">
-            <p className="font-bold dark:text-gray-400">Projects </p>
-            <h1 className="max-w-2xl text-3xl">Get a glimpse of our incredible works</h1>
-            <div className="flex flex-col items-center justify-end md:flex-row">
-              <img
-                src="images/electro.png"
-                alt="Solar Panels"
-                className="order-2 max-w-[50%] object-contain p-5 md:block"
-              />
-              <img
-                src="images/zure.png"
-                alt="qtf projects"
-                className={`order-2 max-w-[50%] object-contain p-5 md:block`}
-              />
-            </div>
+      <nav className="mx-auto w-full max-w-7xl bg-transparent px-4" aria-label="Progress steps">
+        <ol className="grid auto-cols-fr grid-flow-col gap-5">
+          {companyData.OurProcess.map((step, index) => (
+            <li key={step} className="col-span-full sm:col-auto">
+              {/* :STATUS COMPLETED */}
 
-            <div className="flex items-center justify-end gap-2 self-end">
-              <img src="icons/leftprojectnav.svg" alt="Solar Panels" className="w-20" />
-              <img
-                src="icons/leftprojectnav.svg"
-                alt="Solar Panels"
-                className="w-20"
-                style={{ transform: "scaleX(-1)" }}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+              <a
+                href={step}
+                className="group flex flex-col items-start border-l-4 border-primary p-4 hover:border-primary-foreground sm:border-l-0 sm:border-t-4"
+              >
+                <h1 className="text-sm font-semibold uppercase tracking-wide text-primary group-hover:text-blue-900">{`STEP ${
+                  index + 1
+                }`}</h1>
+                {/* ::Step title */}
+                <span className="text-base font-semibold text-gray-700">{step}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+
       <div className="flex flex-col gap-2">
         <p>Our Customers</p>
         <h3 className="max-w-md text-xl font-extrabold dark:text-white">
