@@ -5,6 +5,7 @@ import GetQuoteButton from "components/GetQuoteButton"
 import { Badge } from "@/components/ui/badge"
 import Stats from "components/Stats"
 import { Tooltip } from "components/Tooltip/Tooltip"
+import { Linkedin, TwitterIcon } from "lucide-react"
 
 export const companyData = {
   companyName: "PitchR Africa",
@@ -21,7 +22,7 @@ export const companyData = {
   },
   taglines: ["Fundraise with Ease", `Deliver your best Pitch to Investors with PitchR`],
 
-  Stat: "Most founders get to close less than 5x of the investors they pitch to - we can help you 10x that outcome.",
+  Stat: "Most founders get to close less than 5x of the investors they pitch to - we can help you 10x that outcome",
   Description:
     "Our aim is to improve fundraising outcomes for founders and get you to give your best pitch to the next investors you engage with.",
   Mission: "to prepare and set up founders for a successful fundraiser.",
@@ -112,13 +113,12 @@ export function Home() {
         <GetQuoteButton />
       </div>
       <GridItemsDisplay />
-      <div className="flex">
-        <div className="flex max-w-screen-xl flex-col  items-start justify-start px-4 py-8  lg:py-16">
+      <div className="flex flex-col md:flex-row">
+        <div className="flex max-w-screen-xl flex-col items-start justify-start px-4 py-8  lg:py-16">
           <p className="mb-6 max-w-2xl font-bold text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
             Why {companyData.companyName}?
           </p>
-
-          <h1 className="mb-4 max-w-2xl text-3xl">{companyData.Stat}?</h1>
+          <h1 className="mb-4 max-w-2xl text-lg md:text-3xl">{companyData.Stat}?</h1>
           <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400">{companyData.Description}</p>
           <GetQuoteButton variant="outline" className="bg-primary" buttonText="Reach out to us" />
         </div>
@@ -198,6 +198,31 @@ export function Home() {
           ))}
         </ol>
       </div>
+      <section className="mx-auto mb-10 flex max-w-screen-xl flex-col gap-14 bg-white p-10  dark:bg-gray-900" id="team">
+        <div className="flex flex-col gap-8 p-4">
+          <h1 className="text-center text-3xl font-bold text-gray-800"> Team</h1>
+          <div className="justify evenly flex flex-col items-center md:flex-row md:space-y-0">
+            {companyData.team.map((person) => {
+              return (
+                <div>
+                  <img src={`/team/${person.name}.jpeg`} className="w-full object-cover" />
+                  <div className="flex items-center justify-between rounded-lg bg-primary p-4 text-white shadow dark:bg-gray-800">
+                    <p className="text-xl dark:text-white">{person.name}</p>
+                    <div className="flex gap-4">
+                      <a href={person.twitter}>
+                        <TwitterIcon href={person.twitter} />
+                      </a>
+                      <a href={person.linkedin}>
+                        <Linkedin href={person.twitter} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
       <GetQuoteBanner
         props={{
           title: "A great fit?",
@@ -214,7 +239,7 @@ export function Home() {
             "1% of successful fundraise donated to a program/initiative/NGO of choice",
             "To be agreed upon by the end of the first call.",
           ],
-          image: "/images/costs.jpeg",
+          image: "/images/costs.jpg",
           position: "left",
         }}
       />

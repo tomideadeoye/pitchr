@@ -36,7 +36,7 @@ export const GetQuoteBanner = ({ props }: { props: GetQuoteBannerProps }) => {
       <img
         src={props.image}
         alt="Solar Panels"
-        className={`"h-[28rem] hidden w-[28rem] rounded-full object-cover md:block xl:h-[34rem] xl:w-[34rem] ${
+        className={`hidden h-[28rem] w-[28rem] rounded-full border-2 border-primary object-cover md:block xl:h-[34rem] xl:w-[34rem] ${
           isImageOnLeft ? "order-2" : ""
         }`}
       />
