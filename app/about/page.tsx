@@ -2,9 +2,9 @@
 
 import { Metadata } from "next"
 import GetQuoteButton from "components/GetQuoteButton"
-import { companyData } from "app/page"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { TwitterIcon } from "lucide-react"
+import { companyData } from "app/Home"
 
 const metadata: Metadata = {
   title: "About Us",

@@ -1,4 +1,5 @@
-import { companyData } from "app/page"
+import { companyData } from "app/Home"
+
 
 interface GridItemProps {
   icon: string

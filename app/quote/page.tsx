@@ -4,13 +4,13 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { ContactUsRequest } from "app/api/contact-us/route"
-import { companyData } from "app/page"
 import ImageUploadComponent from "components/ImageUploadComponent"
 import { ImageType } from "react-images-uploading"
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import { companyData } from "app/Home"
 
 export default function GetQTFQuote() {
   const [files, setFiles] = useState<ImageType[]>([])

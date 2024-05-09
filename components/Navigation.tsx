@@ -2,21 +2,17 @@
 
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
+} from "@/components/ui/navigation-menu";
 
-import React, { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link"
 import GetQuoteButton from "./GetQuoteButton"
-import { companyData } from "app/page"
 import { Instagram, Linkedin, Twitter } from "lucide-react"
+import { companyData } from "app/Home"
 
 const navLinks = [{ href: "/about", label: "About Us" }]
 

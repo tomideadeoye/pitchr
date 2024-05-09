@@ -1,6 +1,6 @@
 "use client"
 
-import { companyData } from "app/page"
+// import { companyData } from "app/page"
 import GetQuoteButton from "./GetQuoteButton"
 import { Button } from "@/components/ui/button"
 

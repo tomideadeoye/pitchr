@@ -1,6 +1,6 @@
 "use client"
 
-import { companyData } from "app/page"
+import { companyData } from "app/Home"
 import CountUp from "react-countup"
 
 const Stats = () => {
