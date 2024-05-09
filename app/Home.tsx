@@ -163,7 +163,7 @@ export function Home() {
 
               {companyData.ValueAdd.map((value, index) => (
                 <div className="md:-mx-4 md:flex md:items-start">
-                  <div className="md:text-5xl px-4 text-xl font-extralight text-primary">0{index + 1}.</div>
+                  <div className="px-4 text-xl font-extralight text-primary md:text-5xl">0{index + 1}.</div>
                   <p className="mt-3 text-gray-500 dark:text-gray-300">{value}</p>
                 </div>
               ))}
