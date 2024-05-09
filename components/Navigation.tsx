@@ -52,7 +52,7 @@ export function Footer() {
       items: [
         {
           name: "About Us",
-          href: "/about",
+          href: "/?#team",
         },
       ],
     },

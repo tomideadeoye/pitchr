@@ -207,13 +207,13 @@ export function Home() {
                 <div>
                   <img src={`/team/${person.name}.jpeg`} className="w-full object-cover" />
                   <div className="flex items-center justify-between rounded-lg bg-primary p-4 text-white shadow dark:bg-gray-800">
-                    <p className="text-xl dark:text-white">{person.name}</p>
+                    <p className="text-xs dark:text-white md:text-xl">{person.name}</p>
                     <div className="flex gap-4">
-                      <a href={person.twitter}>
-                        <TwitterIcon href={person.twitter} />
+                      <a href={person.twitter} className="cursor-pointer text-white">
+                        <TwitterIcon href={person.twitter} className="h-3 w-3 md:h-6 md:w-6" />
                       </a>
-                      <a href={person.linkedin}>
-                        <Linkedin href={person.twitter} />
+                      <a href={person.linkedin} className="cursor-pointer text-white">
+                        <Linkedin href={person.twitter} className="h-3 w-3 md:h-6 md:w-6" />
                       </a>
                     </div>
                   </div>
