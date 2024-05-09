@@ -27,7 +27,7 @@ export const GetQuoteBanner = ({ props }: { props: GetQuoteBannerProps }) => {
   }
 
   return (
-    <div className={`flex items-center ${isImageOnLeft ? "flex-row-reverse" : ""}`}>
+    <div className={`flex items-center gap-4 ${isImageOnLeft ? "flex-row-reverse" : ""}`}>
       <div className="flex max-w-screen-xl flex-col items-start justify-start gap-4 px-4 py-8 lg:py-16">
         <h2 className="mb-4 max-w-2xl">{props.title}</h2>
         {renderDescription()}
@@ -36,7 +36,9 @@ export const GetQuoteBanner = ({ props }: { props: GetQuoteBannerProps }) => {
       <img
         src={props.image}
         alt="Solar Panels"
-        className={`hidden max-w-[50%] object-contain p-5 md:block ${isImageOnLeft ? "order-2" : ""}`}
+        className={`"h-[28rem] hidden w-[28rem] rounded-full object-cover md:block xl:h-[34rem] xl:w-[34rem] ${
+          isImageOnLeft ? "order-2" : ""
+        }`}
       />
     </div>
   )
