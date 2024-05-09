@@ -16,8 +16,8 @@ import { companyData } from "app/Home"
 
 export default function Navbar() {
   return (
-    <nav className="fixed start-0 top-0 z-20 w-full border-b border-gray-200 bg-white p-5 text-xs dark:border-gray-600 dark:bg-gray-900">
-      <NavigationMenu className="flex justify-between">
+    <nav className="fixed top-0 z-20 w-full border-b border-gray-200 bg-white p-5 text-xs dark:border-gray-600 dark:bg-gray-900 self-center">
+      <NavigationMenu className="flex justify-between mx-auto max-w-7xl items-center w-full">
         <NavigationMenuList>
           <NavigationMenuItem>
             <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">

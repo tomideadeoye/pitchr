@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import { companyData } from "./Home"
 
 export const metadata: Metadata = {
   title: "PitchR",
@@ -20,7 +21,9 @@ export const metadata: Metadata = {
       },
     ],
   },
-  other: {},
+  other: {
+    companyData: JSON.stringify(companyData),
+  },
 }
 import { Home } from "./Home"
 

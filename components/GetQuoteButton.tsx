@@ -11,7 +11,7 @@ interface Props {
 
 export default function GetQuoteButton({ variant, buttonText, className }: Props) {
   return (
-    <Link href="/quote" className="w-fit">
+    <Link href="/contact" className="w-fit">
       <Button
         variant={variant ?? "default"}
         className={`rounded-[50px] text-white ${className} flex w-fit gap-2 px-5 text-xs`}
