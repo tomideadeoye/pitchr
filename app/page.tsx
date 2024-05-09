@@ -9,7 +9,7 @@ const metadata: Metadata = {
   openGraph: {
     url: "https://www.qtfenergy.com/",
     title: "PitchR",
-    description: "Solar energy solutions for your business",
+    description: "Venture funding for your startup",
     siteName: "PitchR",
 
     images: [
