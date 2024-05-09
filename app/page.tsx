@@ -1,20 +1,24 @@
+"use client"
 import { Metadata } from "next"
-import Link from "next/link"
-import { FAQAccordion } from "../components/FAQAccordion"
 import { GetQuoteBanner } from "../components/GetQuoteBanner"
 import { GridItemsDisplay } from "../components/GridItemsDisplay"
 import GetQuoteButton from "components/GetQuoteButton"
-import { JoinUsBanner } from "components/JoinUsBanner"
 import { Badge } from "@/components/ui/badge"
+import Stats from "components/Stats"
+import { Tooltip } from "components/Tooltip/Tooltip"
 
 export const companyData = {
   companyName: "PitchR Africa",
   contact: {
     websites: ["www.pitchr.africa"],
     emails: ["info@pitchr.africa"],
-    phones: ["08157083837"],
+    phones: ["+234 815 708 3837"],
     addresses: ["Co-Working Space X"],
-    socialMedia: [],
+    socialMedia: {
+      twitter: null,
+      linkedin: null,
+      instagram: null,
+    },
   },
   taglines: ["Fundraise with Ease", `Deliver your best Pitch to Investors with PitchR`],
 
@@ -50,20 +54,17 @@ export const companyData = {
   ],
   team: [
     {
-      name: "Timilehin Idowu",
-
+      name: "Timileyin Idowu",
       linkedin: "https://www.linkedin.com/in/timileyin-idowu-507523146/",
       twitter: "",
     },
     {
       name: "Olumide Ashade",
-
       linkedin: "https://www.linkedin.com/in/olumide-ashade-7b4089162/",
       twitter: "https://twitter.com/OlumideAshade",
     },
     {
       name: "Carl Macaulay",
-
       linkedin: "https://www.linkedin.com/in/timileyin-idowu-507523146/",
       twitter: "",
     },
@@ -75,30 +76,28 @@ export const companyData = {
     "A second call to further understand your needs and develop a tailor-made solution/plan",
     "Bi-Weekly calls to keep updated and provide continued support.",
   ],
-  FoundersOfficeHours: {
-    ValueAdd: [
-      "Review and get Feedback on your startup Pitch to investors",
-      "6-Months fundraising support",
-      "VC ecosystem support",
-      "Fundraising database management",
-      "Extensive Investment network",
+  Metrics: {
+    VCExperienceYears: 5,
+    VCInvestorsNetwork: 30,
+  },
+  ValueAdd: [
+    "Review and get Feedback on your startup Pitch to investors",
+    "6-Months fundraising support",
+    "VC ecosystem support",
+    "Fundraising database management",
+    "Extensive Investment network",
+  ],
+  TargetStartups: {
+    Criteria: [
+      "Founders with a proven track record of building something helpful.",
+      "Already begun fundraising journey/progress",
+      "Raising $300k+ for Pre-Seed round, $1m+ for Seed Round, $3m+ Series A.",
     ],
-    Metrics: {
-      VCExperienceYears: "5+",
-      VCInvestorsNetwork: "30+",
-    },
-    OurScope: "A list of 30+ investors",
+
     Cost: {
       Commitment: "Commitment to the process",
       Donation: "1% of successful fundraise donated to a program/initiative/NGO of choice",
       Agreement: "To be agreed upon by the end of the first call.",
-    },
-    TargetStartups: {
-      Criteria: [
-        "Founders with a proven track record of building something helpful.",
-        "Already begun fundraising journey/progress",
-        "Raising $300k+ for Pre-Seed round, $1m+ for Seed Round, $3m+ Series A.",
-      ],
     },
   },
 }
@@ -127,33 +126,6 @@ const metadata: Metadata = {
 }
 
 export default function Web() {
-  const qtfAchievements: { icon: string; title: string; description: string }[] = [
-    {
-      icon: "sun.svg",
-      title: "Over 15 years of solar expertise",
-      description:
-        "Our seasoned professionals leverage this knowledge to deliver cutting-edge solar solutions, ensuring efficiency, reliability, and innovation in every project.",
-    },
-    {
-      icon: "headphone.svg",
-      title: "Impeccable customer service",
-      description:
-        "At {companyData.companyName}, our commitment goes beyond solar panels. We prioritize impeccable customer service, ensuring a seamless experience from consultation to installation.",
-    },
-    {
-      icon: "solar.svg",
-      title: "Reliable and sustainable energy at any scale",
-      description:
-        "Whether for organizations or apartment complexes, our tailored solar systems are designed to meet your specific energy requirements, providing a consistent and eco-friendly power source for a greener future.",
-    },
-    {
-      icon: "solarhome.svg",
-      title: "Absolute autonomy without the hassel",
-      description:
-        "{companyData.companyName} simplifies the transition to solar power, offering user-friendly solutions that grant you independence from traditional energy sources.",
-    },
-  ]
-
   return (
     <section className="mx-auto mt-[100px] flex max-w-screen-xl flex-col gap-14  overflow-hidden bg-white p-10  dark:bg-gray-900">
       <div className="flex max-w-screen-xl flex-col  items-start justify-start px-4 py-8  lg:py-16">
@@ -163,7 +135,6 @@ export default function Web() {
         </p>
         <GetQuoteButton />
       </div>
-
       <GridItemsDisplay />
       <div className="flex">
         <div className="flex max-w-screen-xl flex-col  items-start justify-start px-4 py-8  lg:py-16">
@@ -181,26 +152,62 @@ export default function Web() {
           className="hidden max-w-[50%] object-contain p-5 md:block"
         />
       </div>
-
+      <Stats />
       <Badge className="w-fit self-center rounded-full px-4" variant="outline">
-        TRUSTED BY MODERN COMPANIES
+        TRUSTED BY
       </Badge>
-      <div className="mx-auto flex w-full items-center justify-center gap-4 bg-black px-4 py-10">
+      <div className="mx-auto flex w-full items-center justify-center gap-4 px-4 py-10" id="process">
         {companyData.PortfolioStartups.map((company) => {
           return (
-            <a href={company.website}>
-              <img src={company.logo} alt="" className="max-h-8 " />
-            </a>
+            <Tooltip explainer={company.name}>
+              <a href={company.website} className="flex w-[150px]  flex-col bg-[#ffffff]  shadow-xl">
+                <figure className="flex items-center justify-center">
+                  <img src={company.logo} alt="Card Preview" className="h-14 invert filter" />
+                </figure>
+              </a>
+            </Tooltip>
           )
         })}
       </div>
+      <section className="bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-6 py-10">
+          <div className="lg:flex lg:items-center">
+            <div className="w-full space-y-12 lg:w-1/2 ">
+              <div>
+                <h1 className="text-2xl font-semibold capitalize text-gray-800 dark:text-white lg:text-3xl">
+                  Value Added
+                </h1>
 
-      <nav className="mx-auto w-full max-w-7xl bg-transparent px-4" aria-label="Progress steps">
+                <div className="mt-2">
+                  <span className="inline-block h-1 w-40 rounded-full bg-primary"></span>
+                  <span className="ml-1 inline-block h-1 w-3 rounded-full bg-primary"></span>
+                  <span className="ml-1 inline-block h-1 w-1 rounded-full bg-primary"></span>
+                </div>
+              </div>
+
+              {companyData.ValueAdd.map((value, index) => (
+                <div className="md:-mx-4 md:flex md:items-start">
+                  <div className="px-4 text-5xl font-extralight text-primary">0{index + 1}.</div>
+                  <p className="mt-3 text-gray-500 dark:text-gray-300">{value}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="hidden lg:flex lg:w-1/2 lg:items-center lg:justify-center">
+              <img
+                className="h-[28rem] w-[28rem] rounded-full object-cover xl:h-[34rem] xl:w-[34rem]"
+                src="/images/value.jpeg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </section>{" "}
+      <hr className="my-12 border-gray-200 dark:border-gray-700" />
+      <div className="mx-auto w-full max-w-7xl bg-transparent px-4" aria-label="Progress steps" id="process">
         <ol className="grid auto-cols-fr grid-flow-col gap-5">
           {companyData.OurProcess.map((step, index) => (
             <li key={step} className="col-span-full sm:col-auto">
-              {/* :STATUS COMPLETED */}
-
               <a
                 href={step}
                 className="group flex flex-col items-start border-l-4 border-primary p-4 hover:border-primary-foreground sm:border-l-0 sm:border-t-4"
@@ -208,46 +215,34 @@ export default function Web() {
                 <h1 className="text-sm font-semibold uppercase tracking-wide text-primary group-hover:text-blue-900">{`STEP ${
                   index + 1
                 }`}</h1>
-                {/* ::Step title */}
+
                 <span className="text-base font-semibold text-gray-700">{step}</span>
               </a>
             </li>
           ))}
         </ol>
-      </nav>
-
-  
-
+      </div>
       <GetQuoteBanner
         props={{
-          title: "Experience the ultimate Personalized Services we have to offer",
-          description:
-            "Discover the ultimate in personalized services as we tailor our solutions to meet your unique energy needs. At {companyData.companyName}, we go beyond the conventional, ensuring your experience is not just efficient but precisely crafted to fit your goals and aspirations.",
-          image: "/images/panels1.png",
-          position: "left",
-        }}
-      />
-      <GetQuoteBanner
-        props={{
-          title: "Regardless of your needs our custom solar designs have you covered",
-          description: `Your energy needs, our custom solutions. {companyData.companyName} ensures that, regardless of your requirements, our custom solar designs have you covered. From tailored solutions for organizations to efficient designs for apartment complexes, our commitment is to provide comprehensive and personalized solar solutions that perfectly match your unique needs.`,
-          image: "/images/panels2.png",
+          title: "Are you a great fit for us?",
+          description: companyData.TargetStartups.Criteria,
+          image: "/images/panels3.png",
           position: "right",
         }}
       />
       <GetQuoteBanner
         props={{
-          title: "The ultimate guarantee for years to come, no need to worry",
-          description: `Our commitment to reliability and sustainability ensures that your investment in solar energy is backed by a steadfast promise of long-term performance. Rest easy knowing that with {companyData.companyName}, your energy future is secure, and there's no need for concerns.`,
+          title: "What will this cost you?",
+          description: [
+            "Commitment to the process",
+            "1% of successful fundraise donated to a program/initiative/NGO of choice",
+            "To be agreed upon by the end of the first call.",
+          ],
           image: "/images/panels3.png",
           position: "left",
         }}
       />
-      <FAQAccordion />
-      <Link href="/faq" className="self-center">
-        Read more FAQ
-      </Link>
-      <JoinUsBanner />
+      {/* <JoinUsBanner /> */}
       <div className="mb-5" />
     </section>
   )

@@ -1,10 +1,12 @@
+"use client"
+
 import { Metadata } from "next"
 import GetQuoteButton from "components/GetQuoteButton"
 import { companyData } from "app/page"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { TwitterIcon } from "lucide-react"
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "About Us",
   twitter: {
     card: "summary_large_image",

@@ -1,4 +1,4 @@
-import Navbar, { Footer } from "components/Navbar"
+import Navbar, { Footer } from "components/Navigation"
 import "styles/tailwind.css"
 import localFont from "next/font/local"
 

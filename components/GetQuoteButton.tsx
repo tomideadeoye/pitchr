@@ -11,10 +11,13 @@ interface Props {
 
 export default function GetQuoteButton({ variant, buttonText, className }: Props) {
   return (
-    <Link href="/quote" className="flex items-center space-x-2">
-      <Button variant={variant ?? "default"} className={`rounded-[50px] text-white ${className} p-3 px-5`}>
-        Reach out to us
-        <ArrowUpRight className="ml-2" />
+    <Link href="/quote" className="w-fit">
+      <Button
+        variant={variant ?? "default"}
+        className={`rounded-[50px] text-white ${className} flex w-fit gap-2 px-5 text-xs`}
+      >
+        {buttonText ?? "Reach out to us"}
+        <ArrowUpRight />
       </Button>
     </Link>
   )
