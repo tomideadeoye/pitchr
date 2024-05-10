@@ -3,9 +3,6 @@ import { companyData } from "./Home"
 
 export const metadata: Metadata = {
   title: "PitchR",
-  twitter: {
-    card: "summary_large_image",
-  },
 
   openGraph: {
     url: "https://www.pitchr.africa/",
