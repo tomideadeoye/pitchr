@@ -11,7 +11,7 @@ export const monument = localFont({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={monument.variable}>
-      <body className={`py-16`}>
+      <body>
         <Navbar />
         {children}
         <Footer />

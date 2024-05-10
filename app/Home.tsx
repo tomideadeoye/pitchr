@@ -5,7 +5,9 @@ import GetQuoteButton from "components/GetQuoteButton"
 import { Badge } from "@/components/ui/badge"
 import Stats from "components/Stats"
 import { Tooltip } from "components/Tooltip/Tooltip"
-import { Linkedin, TwitterIcon } from "lucide-react"
+import { Team } from "../components/Team"
+import FadeAnimations from "components/Animations"
+import { Avatar, AvatarImage } from "@radix-ui/react-avatar"
 
 export const companyData = {
   companyName: "PitchR Africa",
@@ -94,11 +96,11 @@ export const companyData = {
       "Raising $300k+ for Pre-Seed round, $1m+ for Seed Round, $3m+ Series A.",
     ],
 
-    Cost: {
-      Commitment: "Commitment to the process",
-      Donation: "1% of successful fundraise donated to a program/initiative/NGO of choice",
-      Agreement: "To be agreed upon by the end of the first call.",
-    },
+    Cost: [
+      "Commitment to the process",
+      "1% of successful fundraise donated to a program/initiative/NGO of choice",
+      "To be agreed upon by the end of the first call.",
+    ],
   },
 }
 
@@ -113,13 +115,13 @@ export function Home() {
         <GetQuoteButton />
       </div>
       <GridItemsDisplay />
-      <div className="flex flex-col md:flex-row">
-        <div className="flex max-w-screen-xl flex-col items-start justify-start px-4 py-8  lg:py-16">
-          <p className="mb-6 max-w-2xl font-bold text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
+      <div className="flex flex-col justify-between md:flex-row">
+        <div className="flex max-w-lg flex-col items-start justify-start gap-8 px-4  py-8 lg:py-16">
+          <p className="font-bold text-gray-500 dark:text-gray-400 md:text-lg lg:text-2xl">
             Why {companyData.companyName}?
           </p>
-          <h1 className="mb-4 max-w-2xl text-lg md:text-3xl">{companyData.Stat}?</h1>
-          <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400">{companyData.Description}</p>
+          <h1 className="text-lg md:text-2xl">{companyData.Stat}?</h1>
+          <p className="font-light text-gray-500 dark:text-gray-400">{companyData.Description}</p>
           <GetQuoteButton variant="outline" className="bg-primary" buttonText="Reach out to us" />
         </div>
         <img
@@ -145,40 +147,17 @@ export function Home() {
           )
         })}
       </div>
-      <section className="bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-6 py-10">
-          <div className="lg:flex lg:items-center">
-            <div className="w-full space-y-12 lg:w-1/2 ">
-              <div>
-                <h1 className="text-2xl font-semibold capitalize text-gray-800 dark:text-white lg:text-3xl">
-                  Value Added
-                </h1>
+      <FadeAnimations fadeDirection="up">
+        <GetQuoteBanner
+          props={{
+            title: "Value Added",
+            description: companyData.ValueAdd,
+            image: "/images/value.jpeg",
+            position: "right",
+          }}
+        />
+      </FadeAnimations>
 
-                <div className="mt-2">
-                  <span className="inline-block h-1 w-40 rounded-full bg-primary"></span>
-                  <span className="ml-1 inline-block h-1 w-3 rounded-full bg-primary"></span>
-                  <span className="ml-1 inline-block h-1 w-1 rounded-full bg-primary"></span>
-                </div>
-              </div>
-
-              {companyData.ValueAdd.map((value, index) => (
-                <div className="md:-mx-4 md:flex md:items-start">
-                  <div className="px-4 text-xl font-extralight text-primary md:text-5xl">0{index + 1}.</div>
-                  <p className="mt-3 text-gray-500 dark:text-gray-300">{value}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="hidden lg:flex lg:w-1/2 lg:items-center lg:justify-center">
-              <img
-                className="h-[28rem] w-[28rem] rounded-full object-cover xl:h-[34rem] xl:w-[34rem]"
-                src="/images/value.jpeg"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </section>{" "}
       <hr className="my-12 border-gray-200 dark:border-gray-700" />
       <div className="mx-auto w-full max-w-7xl bg-transparent px-4" aria-label="Progress steps" id="process">
         <ol className="grid auto-cols-fr grid-flow-col gap-5">
@@ -198,51 +177,31 @@ export function Home() {
           ))}
         </ol>
       </div>
-      <section className="mx-auto mb-10 flex max-w-screen-xl flex-col gap-14 bg-white p-10  dark:bg-gray-900" id="team">
-        <div className="flex flex-col gap-8 p-4">
-          <h1 className="text-center text-3xl font-bold text-gray-800"> Team</h1>
-          <div className="justify evenly flex flex-col items-center md:flex-row md:space-y-0">
-            {companyData.team.map((person) => {
-              return (
-                <div>
-                  <img src={`/team/${person.name}.jpeg`} className="w-full object-cover" />
-                  <div className="flex items-center justify-between rounded-lg bg-primary p-4 text-white shadow dark:bg-gray-800">
-                    <p className="text-xs dark:text-white md:text-xl">{person.name}</p>
-                    <div className="flex gap-4">
-                      <a href={person.twitter} className="cursor-pointer text-white">
-                        <TwitterIcon href={person.twitter} className="h-3 w-3 md:h-6 md:w-6" />
-                      </a>
-                      <a href={person.linkedin} className="cursor-pointer text-white">
-                        <Linkedin href={person.twitter} className="h-3 w-3 md:h-6 md:w-6" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-      <GetQuoteBanner
-        props={{
-          title: "A great fit?",
-          description: companyData.TargetStartups.Criteria,
-          image: "/images/match.jpeg",
-          position: "right",
-        }}
-      />
-      <GetQuoteBanner
-        props={{
-          title: "What will this cost you?",
-          description: [
-            "Commitment to the process",
-            "1% of successful fundraise donated to a program/initiative/NGO of choice",
-            "To be agreed upon by the end of the first call.",
-          ],
-          image: "/images/costs.jpg",
-          position: "left",
-        }}
-      />
+      <FadeAnimations fadeDirection="up">
+        <Team />
+      </FadeAnimations>
+      <FadeAnimations fadeDirection="up">
+        <GetQuoteBanner
+          props={{
+            title: "A great fit?",
+            description: companyData.TargetStartups.Criteria,
+            image: "/images/match.jpeg",
+            position: "right",
+            actionButton: <GetQuoteButton />,
+          }}
+        />
+      </FadeAnimations>
+      <FadeAnimations fadeDirection="up">
+        <GetQuoteBanner
+          props={{
+            title: "What will this cost you?",
+            description: companyData.TargetStartups.Cost,
+            image: "/images/costs.jpg",
+            position: "left",
+            actionButton: <GetQuoteButton />,
+          }}
+        />
+      </FadeAnimations>
       {/* <JoinUsBanner /> */}
       <div className="mb-5" />
     </section>

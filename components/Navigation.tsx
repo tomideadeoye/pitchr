@@ -1,43 +1,41 @@
-"use client";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-
+"use client"
 import Link from "next/link"
 import GetQuoteButton from "./GetQuoteButton"
 import { Instagram, Linkedin, Twitter } from "lucide-react"
 import { companyData } from "app/Home"
 
+const navRoutes: {
+  name: string
+  href: string
+}[] = [
+  {
+    name: "Process",
+    href: "/?#process",
+  },
+  {
+    name: "Team",
+    href: "/?#team",
+  },
+]
+
 export default function Navbar() {
   return (
-    <NavigationMenu className="mx-auto flex w-full max-w-screen-2xl items-center justify-between gap-2 bg-white p-2 dark:bg-gray-900">
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="/logo.png" className="h-8" alt={`${companyData.companyName} logo`} />
-          </Link>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-      <NavigationMenuList>
-        <NavigationMenuItem className="hidden lg:block">
-          <Link href="/?#process" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>Process</NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/?#team" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>Team</NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <GetQuoteButton buttonText="Suggest a Startup" />
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+    <div className="sticky  top-0 z-10 mx-auto flex w-full items-center justify-center bg-primary p-4 text-white dark:bg-gray-900">
+      <div className="flex w-full max-w-screen-xl  items-center justify-between self-center">
+        <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+          <img src="/logo.png" className="h-8" alt={`${companyData.companyName} logo`} />
+        </Link>
+
+        <div className="flex-end flex  items-center gap-8 self-end">
+          {navRoutes.map((item) => (
+            <Link href={item.href} legacyBehavior passHref>
+              {item.name}
+            </Link>
+          ))}{" "}
+          <GetQuoteButton buttonText="Suggest a Startup" className="bg-white text-primary" />
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -45,30 +43,22 @@ export function Footer() {
   const footerItems = [
     {
       title: companyData.companyName,
-      items: [
-        {
-          name: "About Us",
-          href: "/?#team",
-        },
-      ],
+      items: navRoutes,
     },
   ]
 
   return (
-    <footer className="bg-white p-4 dark:bg-gray-900">
-      <hr className="my-12 border-gray-200 dark:border-gray-700" />
-      <div className="mx-auto w-full max-w-screen-xl text-gray-500">
-        {" "}
+    <footer className="border-t-primary-foreground bg-primary py-20 text-white dark:bg-gray-900">
+      <div className="mx-auto w-full max-w-screen-xl">
         <div className="grid grid-cols-2 gap-8 px-4 py-6 md:grid-cols-4 lg:py-8">
-          {" "}
-          <div className="flex flex-col gap-4 px-4 text-gray-500 dark:bg-gray-700 dark:text-gray-300">
+          <div className="flex flex-col gap-4 px-4 dark:bg-gray-700">
             <img src="/logo.png" className="h-12 w-9" alt={companyData.companyName + " logo"} />
             <span className="text-sm">© {companyData.companyName}. All rights reserved</span>
           </div>
           {footerItems.map((footerItem) => (
             <div>
-              <h3 className="text-md mb-6 font-semibold uppercase dark:text-white">{footerItem.title}</h3>
-              <ul className="text-sm font-medium  dark:text-gray-400">
+              <h3 className="text-md mb-6 font-semibold uppercase">{footerItem.title}</h3>
+              <ul className="text-sm font-medium  ">
                 {footerItem.items.map((item) => (
                   <li className="mb-4" key={item.name}>
                     <a href={item.href} className="hover:underline">
@@ -78,10 +68,10 @@ export function Footer() {
                 ))}
               </ul>
             </div>
-          ))}{" "}
+          ))}
           <div>
-            <h3 className="text-md mb-6 font-semibold uppercase dark:text-white">Contact Us</h3>
-            <ul className="font-medium  dark:text-gray-400">
+            <h3 className="text-md mb-6 font-semibold uppercase">Contact Us</h3>
+            <ul className="font-medium">
               <li className="flex flex-col gap-3">
                 <a href={companyData.contact.emails[0]} target="_blank" rel="noopener noreferrer" className="mb-4">
                   {companyData.contact.emails[0]}
