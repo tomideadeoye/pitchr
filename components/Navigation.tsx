@@ -1,5 +1,4 @@
-"use client"
-
+"use client";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -8,7 +7,6 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
-import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import GetQuoteButton from "./GetQuoteButton"
 import { Instagram, Linkedin, Twitter } from "lucide-react"
@@ -16,32 +14,30 @@ import { companyData } from "app/Home"
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 z-20 w-full border-b border-gray-200 bg-white p-5 text-xs dark:border-gray-600 dark:bg-gray-900 self-center">
-      <NavigationMenu className="flex justify-between mx-auto max-w-7xl items-center w-full">
-        <NavigationMenuList>
-          <NavigationMenuItem>
-            <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src="/logo.png" className="h-8" alt={companyData.companyName + " logo"} />
-            </Link>
-          </NavigationMenuItem>
-        </NavigationMenuList>
-        <NavigationMenuList>
-          <NavigationMenuItem className="hidden lg:block">
-            <Link href="/?#process" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>Process</NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <Link href="/?#team" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>Team</NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <GetQuoteButton buttonText="Suggest a Startup" />
-          </NavigationMenuItem>
-        </NavigationMenuList>
-      </NavigationMenu>
-    </nav>
+    <NavigationMenu className="mx-auto flex w-full max-w-screen-2xl items-center justify-between gap-2 bg-white p-2 dark:bg-gray-900">
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <Link href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/logo.png" className="h-8" alt={`${companyData.companyName} logo`} />
+          </Link>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+      <NavigationMenuList>
+        <NavigationMenuItem className="hidden lg:block">
+          <Link href="/?#process" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>Process</NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/?#team" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>Team</NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <GetQuoteButton buttonText="Suggest a Startup" />
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
   )
 }
 

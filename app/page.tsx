@@ -6,18 +6,19 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
+  
 
   openGraph: {
     url: "https://www.pitchr.africa/",
     title: "PitchR",
-    description: "Venture funding for your startup",
+    description: "Deliver your best Pitch to Investors with PitchR",
     siteName: "PitchR",
 
     images: [
       {
         width: 1200,
         height: 630,
-        url: "https://www.pitchr.africa/",
+        url: "https://raw.githubusercontent.com/tomideadeoye/pitchr/main/public/logo.png",
       },
     ],
   },
