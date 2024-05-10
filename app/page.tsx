@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
   },
-  
 
   openGraph: {
     url: "https://www.pitchr.africa/",
@@ -18,7 +17,12 @@ export const metadata: Metadata = {
       {
         width: 1200,
         height: 630,
-        url: "https://raw.githubusercontent.com/tomideadeoye/pitchr/main/public/logo.png",
+        url: "https://raw.githubusercontent.com/tomideadeoye/pitchr/main/public/og-image.png",
+      },
+      {
+        width: 1200,
+        height: 630,
+        url: "https://github.com/tomideadeoye/pitchr/blob/main/app/opengraph-image.jpg?raw=true",
       },
     ],
   },
