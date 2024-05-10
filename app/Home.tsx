@@ -105,7 +105,7 @@ export const companyData = {
 
 export function Home() {
   return (
-    <section className="mx-auto mt-[100px] flex max-w-screen-xl flex-col gap-14  overflow-hidden bg-white p-10  dark:bg-gray-900">
+    <section className="mx-auto mt-[100px] flex max-w-screen-xl flex-col gap-[120px]  overflow-hidden bg-white  p-10 dark:bg-gray-900">
       <div className="flex max-w-screen-xl flex-col  items-start justify-start px-4 py-8  lg:py-16">
         <h1 className={`mb-4 max-w-3xl font-monument`}>{companyData.taglines[0]}</h1>
         <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
@@ -146,6 +146,7 @@ export function Home() {
           )
         })}
       </div>
+      <hr className="border-gray-200 dark:border-gray-700" />
       <FadeAnimations fadeDirection="up">
         <GetQuoteBanner
           props={{
@@ -158,7 +159,7 @@ export function Home() {
         />
       </FadeAnimations>
 
-      <hr className="my-12 border-gray-200 dark:border-gray-700" />
+      <hr className="border-gray-200 dark:border-gray-700" />
       <div className="mx-auto w-full max-w-7xl bg-transparent px-4" aria-label="Progress steps" id="process">
         <ol className="grid auto-cols-fr grid-flow-col gap-5">
           {companyData.OurProcess.map((step, index) => (
@@ -177,9 +178,11 @@ export function Home() {
           ))}
         </ol>
       </div>
+      <hr className="border-gray-200 dark:border-gray-700" />
       <FadeAnimations fadeDirection="up">
         <Team />
       </FadeAnimations>
+      <hr className="border-gray-200 dark:border-gray-700" />
       <FadeAnimations fadeDirection="up">
         <GetQuoteBanner
           props={{
@@ -192,6 +195,7 @@ export function Home() {
           }}
         />
       </FadeAnimations>
+      <hr className="border-gray-200 dark:border-gray-700" />
       <FadeAnimations fadeDirection="up">
         <GetQuoteBanner
           props={{
@@ -205,7 +209,6 @@ export function Home() {
         />
       </FadeAnimations>
       {/* <JoinUsBanner /> */}
-      <div className="mb-5" />
     </section>
   )
 }
