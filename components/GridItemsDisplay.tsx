@@ -12,7 +12,7 @@ export const GridItemsDisplay = () => {
         <h1 className="mb-8 text-center text-xl font-bold text-primary md:text-3xl">What we do!</h1>
         <ul className="grid place-content-center gap-8 sm:grid-cols-2">
           {companyData.Vision.map((item, index) => (
-            <li className="flex">
+            <li className="flex" key={item}>
               <div className="px-4 text-5xl font-extralight text-primary">0{index + 1}.</div>
               <div>
                 <div className="text-xl font-bold ">Research</div>

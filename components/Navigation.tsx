@@ -28,7 +28,7 @@ export default function Navbar() {
 
         <div className="flex-end flex  items-center gap-8 self-end">
           {navRoutes.map((item) => (
-            <Link href={item.href} legacyBehavior passHref>
+            <Link href={item.href} key={item.name}>
               {item.name}
             </Link>
           ))}{" "}
@@ -52,7 +52,9 @@ export function Footer() {
       <div className="mx-auto w-full max-w-screen-xl">
         <div className="grid grid-cols-2 gap-8 px-4 py-6 md:grid-cols-4 lg:py-8">
           <div className="flex flex-col gap-4 px-4 dark:bg-gray-700">
-            <img src="/logo.png" className="h-12 w-9" alt={companyData.companyName + " logo"} />
+            <Link href="/">
+              <img src="/logo.png" className="h-12 w-9" alt={companyData.companyName + " logo"} />
+            </Link>
             <span className="text-sm">© {companyData.companyName}. All rights reserved</span>
           </div>
           {footerItems.map((footerItem) => (

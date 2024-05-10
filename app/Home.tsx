@@ -136,7 +136,7 @@ export function Home() {
       <div className="mx-auto flex w-full items-center justify-center gap-4 px-4" id="process">
         {companyData.PortfolioStartups.map((company) => {
           return (
-            <Tooltip explainer={company.name}>
+            <Tooltip explainer={company.name} key={company.website}>
               <a href={company.website} className="flex w-[150px]  flex-col bg-[#ffffff]  shadow-xl">
                 <figure className="flex items-center justify-center">
                   <img src={company.logo} alt="Card Preview" className="h-14 invert filter" />
@@ -165,12 +165,12 @@ export function Home() {
           {companyData.OurProcess.map((step, index) => (
             <li key={step} className="col-span-full sm:col-auto">
               <a
-                href={step}
-                className="group flex flex-col items-start border-l-4 border-primary p-4 hover:border-primary-foreground sm:border-l-0 sm:border-t-4"
+                href="/contact"
+                className="group flex flex-col items-start gap-4 border-l-4 border-primary p-4 hover:border-primary-foreground sm:border-l-0 sm:border-t-4"
               >
-                <h1 className="text-sm font-semibold uppercase tracking-wide text-primary group-hover:text-blue-900">{`STEP ${
+                <p className="text-xl font-semibold uppercase tracking-wide text-primary group-hover:text-blue-900">{`STEP ${
                   index + 1
-                }`}</h1>
+                }`}</p>
 
                 <span className="text-base font-semibold text-gray-700">{step}</span>
               </a>
