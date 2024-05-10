@@ -3,6 +3,7 @@ import { companyData } from "./Home"
 
 export const metadata: Metadata = {
   title: "PitchR",
+  keywords: ["Pitch", "Venture Funding", "Fundraise", "Founder"],
   openGraph: {
     url: "https://www.pitchr.africa/",
     title: "PitchR",
