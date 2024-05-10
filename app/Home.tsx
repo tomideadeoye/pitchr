@@ -57,7 +57,7 @@ export const companyData = {
     {
       name: "Timileyin Idowu",
       linkedin: "https://www.linkedin.com/in/timileyin-idowu-507523146/",
-      twitter: "",
+      twitter: "https://twitter.com/timmy_idowu",
     },
     {
       name: "Olumide Ashade",
@@ -66,7 +66,7 @@ export const companyData = {
     },
     {
       name: "Carl Macaulay",
-      linkedin: "https://www.linkedin.com/in/timileyin-idowu-507523146/",
+      linkedin: "https://www.linkedin.com/in/carlmacaulay/",
       twitter: "",
     },
   ],

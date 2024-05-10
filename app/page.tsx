@@ -6,7 +6,21 @@ export const metadata: Metadata = {
   applicationName: "PitchR",
   metadataBase: new URL("https://pitchr.africa"),
   creator: "Tomide Adeoye",
-  authors: [{ name: "Tomide Adeoye", url: "https://twitter.com/tomideadeoye" }],
+  authors: [
+    { name: "Tomide Adeoye", url: "https://twitter.com/tomideadeoye" },
+    {
+      name: "Timileyin Idowu",
+      url: "https://twitter.com/timmy_idowu",
+    },
+    {
+      name: "Olumide Ashade",
+      url: "https://twitter.com/OlumideAshade",
+    },
+    {
+      name: "Carl Macaulay",
+      url: "https://www.linkedin.com/in/carlmacaulay/",
+    },
+  ],
   keywords: ["Pitch", "Venture Funding", "Fundraise", "Founder", "investment"],
   twitter: {
     card: "summary_large_image",
