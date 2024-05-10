@@ -7,7 +7,6 @@ import Stats from "components/Stats"
 import { Tooltip } from "components/Tooltip/Tooltip"
 import { Team } from "../components/Team"
 import FadeAnimations from "components/Animations"
-import { Avatar, AvatarImage } from "@radix-ui/react-avatar"
 
 export const companyData = {
   companyName: "PitchR Africa",
@@ -154,6 +153,7 @@ export function Home() {
             description: companyData.ValueAdd,
             image: "/images/value.jpeg",
             position: "right",
+            sectionId: "Value Added",
           }}
         />
       </FadeAnimations>
@@ -187,6 +187,7 @@ export function Home() {
             description: companyData.TargetStartups.Criteria,
             image: "/images/match.jpeg",
             position: "right",
+            sectionId: "fit",
             actionButton: <GetQuoteButton />,
           }}
         />
@@ -198,6 +199,7 @@ export function Home() {
             description: companyData.TargetStartups.Cost,
             image: "/images/costs.jpg",
             position: "left",
+            sectionId: "cost",
             actionButton: <GetQuoteButton />,
           }}
         />

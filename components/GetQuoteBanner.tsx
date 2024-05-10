@@ -7,6 +7,7 @@ interface GetQuoteBannerProps {
   image: string
   position?: "left" | "right"
   actionButton?: ReactNode
+  sectionId: string
 }
 export const GetQuoteBanner = ({ props }: { props: GetQuoteBannerProps }) => {
   const isImageOnLeft = props.position === "left"
@@ -29,7 +30,10 @@ export const GetQuoteBanner = ({ props }: { props: GetQuoteBannerProps }) => {
   }
 
   return (
-    <div className={`flex w-full items-center justify-between ${isImageOnLeft ? "flex-row-reverse" : ""}`}>
+    <div
+      className={`flex w-full items-center justify-between ${isImageOnLeft ? "flex-row-reverse" : ""}`}
+      id={props.sectionId}
+    >
       <div className="flex flex-col gap-8">
         <h2 className="max-w-2xl">{props.title}</h2>
         <div>
