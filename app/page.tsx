@@ -58,6 +58,5 @@ export const metadata: Metadata = {
 import { Home } from "./Home"
 
 export default function Web() {
-  console.log(metadata.title)
   return <Home />
 }
