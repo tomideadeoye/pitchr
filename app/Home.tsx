@@ -36,14 +36,14 @@ export const companyData = {
     {
       name: "JuiceLife.io",
       logo: "https://pbs.twimg.com/profile_images/1709340903305818112/7Iu8BM1D_400x400.jpg",
-      website: "www.juicelife.io",
+      website: "https://juicelife.io",
       description: "JuiceLife makes exercise routines fun like playing video games and rewards you for playing.",
       twitter: "https://twitter.com/JuiceLife_io",
     },
     {
       name: "Barrel",
       logo: "https://www.usebarrel.io/assets/barrel-logo.svg",
-      website: "https://www.usebarrel.io",
+      website: "https://usebarrel.io",
       description: "",
       socialMedia: [
         {

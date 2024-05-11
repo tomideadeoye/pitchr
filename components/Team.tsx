@@ -5,7 +5,7 @@ import { companyData } from "../app/Home"
 export function Team() {
   return (
     <section
-      className="mx-auto flex flex-col gap-14 text-center grayscale-[50%] transition hover:grayscale-0 dark:bg-gray-900 ease-in-out delay-150 duration-900"
+      className="duration-900 mx-auto flex flex-col gap-14 text-center grayscale-[60%] transition ease-in-out hover:grayscale-0 dark:bg-gray-900"
       id="team"
     >
       <h1 className="text-3xl">Team</h1>

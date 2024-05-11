@@ -48,7 +48,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className="border-t-primary-foreground bg-primary py-20 text-white dark:bg-gray-900">
+    <footer className="border-t-primary-foreground bg-primary mt-20 py-20 text-white dark:bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl">
         <div className="grid grid-cols-2 gap-8 px-4 py-6 md:grid-cols-4 lg:py-8">
           <div className="flex flex-col gap-4 px-4 dark:bg-gray-700">
@@ -99,7 +99,7 @@ export function Footer() {
                 )}
               </li>
             </ul>
-          </div>{" "}
+          </div>
         </div>
       </div>
     </footer>
