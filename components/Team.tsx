@@ -4,7 +4,10 @@ import { companyData } from "../app/Home"
 
 export function Team() {
   return (
-    <section className="mx-auto flex text-center flex-col gap-14 dark:bg-gray-900 " id="team">
+    <section
+      className="mx-auto flex flex-col gap-14 text-center grayscale-[50%] transition hover:grayscale-0 dark:bg-gray-900 ease-in-out delay-150 duration-900"
+      id="team"
+    >
       <h1 className="text-3xl">Team</h1>
       <div className="flex flex-col items-center md:flex-row ">
         {companyData.team.map((person) => {
@@ -12,7 +15,7 @@ export function Team() {
             <div className="shadow-lg">
               <img
                 src={`/team/${person.name}.jpeg`}
-                className="w-full border-[1px] border-solid border-primary object-cover"
+                className="w-full border-[1px] border-solid border-primary object-cover "
               />
               <div className="flex items-center justify-between rounded-lg bg-white p-4 text-primary shadow ">
                 <p className="md:text-md text-xs">{person.name}</p>
