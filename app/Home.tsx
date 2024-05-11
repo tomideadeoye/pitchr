@@ -28,9 +28,9 @@ export const companyData = {
     "Our aim is to improve fundraising outcomes for founders and get you to give your best pitch to the next investors you engage with.",
   Mission: "to prepare and set up founders for a successful fundraiser.",
   Vision: [
-    "To be the leading ecosystem where founders and startups can find the highest quality support materials, guidance, and resources for founders and their startups.",
-    "To democratize access and knowledge to investor preparedness.",
-    "To play a leading role and be the connecting point between founders and investors in Africa.",
+    "To be the leading ecosystem where founders and startups can find the highest quality support materials, guidance, and resources for founders and their startups",
+    "To democratize access and knowledge to investor preparedness",
+    "To play a leading role and be the connecting point between founders and investors in Africa",
   ],
   PortfolioStartups: [
     {
